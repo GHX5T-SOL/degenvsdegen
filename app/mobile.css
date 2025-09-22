@@ -1,0 +1,81 @@
+/* Mobile-specific optimizations */
+@media (max-width: 640px) {
+  /* Ensure touch targets are at least 44px */
+  button, a, input, select, textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Improve scrolling on mobile */
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Prevent zoom on input focus */
+  input, select, textarea {
+    font-size: 16px;
+  }
+  
+  /* Optimize animations for mobile */
+  .animate-spin, .animate-pulse, .animate-bounce, .animate-ping {
+    will-change: transform;
+  }
+  
+  /* Ensure proper spacing for mobile */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Mobile-friendly wallet button */
+  .wallet-button {
+    min-height: 44px;
+    font-size: 14px;
+  }
+  
+  /* Mobile coin flip game adjustments */
+  .coin-flip-container {
+    margin: 0 0.5rem;
+  }
+  
+  /* Mobile navigation improvements */
+  .mobile-menu {
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* Prevent horizontal scroll on mobile */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mobile-first responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Touch-friendly hover states for mobile */
+@media (hover: none) and (pointer: coarse) {
+  .hover-scale-105:hover {
+    transform: none;
+  }
+  
+  .hover-bg-white-10:hover {
+    background-color: transparent;
+  }
+}
