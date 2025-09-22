@@ -1,21 +1,14 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/next"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
+  "framework": "nextjs",
+  "buildCommand": "next build",
+  "devCommand": "next dev",
+  "installCommand": "npm install",
+  "outputDirectory": ".next",
   "env": {
-    "NEXT_PUBLIC_SOLANA_RPC_URL": "https://api.devnet.solana.com",
-    "ANCHOR_WALLET": "~/.config/solana/id.json",
-    "ANCHOR_PROVIDER_URL": "https://api.devnet.solana.com"
+    "NEXT_PUBLIC_SOLANA_RPC_URL": "@next_public_solana_rpc_url",
+    "NEXT_PUBLIC_PROGRAM_ID": "@next_public_program_id",
+    "DEPLOYER_PRIVATE_KEY": "@deployer_private_key"
   },
   "functions": {
     "app/api/**/*.ts": {
@@ -37,6 +30,10 @@
         {
           "key": "X-XSS-Protection",
           "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
         }
       ]
     }
@@ -46,6 +43,12 @@
       "source": "/home",
       "destination": "/",
       "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/$1"
     }
   ]
 }
