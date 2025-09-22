@@ -40,8 +40,5 @@
       "destination": "/",
       "permanent": true
     }
-  ],
-  "functions": {
-    "node_bundler": "esbuild"
-  }
+  ]
 }
