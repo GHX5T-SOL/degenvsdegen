@@ -6,9 +6,8 @@
   "installCommand": "npm install",
   "outputDirectory": ".next",
   "env": {
-    "NEXT_PUBLIC_SOLANA_RPC_URL": "@next_public_solana_rpc_url",
-    "NEXT_PUBLIC_PROGRAM_ID": "@next_public_program_id",
-    "DEPLOYER_PRIVATE_KEY": "@deployer_private_key"
+    "NEXT_PUBLIC_SOLANA_RPC_URL": "https://api.devnet.solana.com",
+    "NEXT_PUBLIC_PROGRAM_ID": "3CkSjNQAeoA4Zx5ZhQ7qrREFqw3xiyuFZF7mG97jQZNU"
   },
   "functions": {
     "app/api/**/*.ts": {
