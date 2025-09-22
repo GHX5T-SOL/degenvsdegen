@@ -1,13 +1,15 @@
 {
   "version": 2,
   "framework": "nextjs",
-  "buildCommand": "next build",
+  "buildCommand": "npm run build",
   "devCommand": "next dev",
   "installCommand": "npm install --legacy-peer-deps",
   "outputDirectory": ".next",
   "env": {
     "NEXT_PUBLIC_SOLANA_RPC_URL": "https://api.devnet.solana.com",
-    "NEXT_PUBLIC_PROGRAM_ID": "3CkSjNQAeoA4Zx5ZhQ7qrREFqw3xiyuFZF7mG97jQZNU"
+    "NEXT_PUBLIC_PROGRAM_ID": "3CkSjNQAeoA4Zx5ZhQ7qrREFqw3xiyuFZF7mG97jQZNU",
+    "NEXT_PUBLIC_SUPABASE_URL": "https://fovfgwsiwsmmkxwauagx.supabase.co",
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZvdmZnd3Npd3NtbWt4d2F1YWd4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg0NTk4ODQsImV4cCI6MjA3NDAzNTg4NH0.iKrjz3v1YFWt_eg6WlfksLYLCIVIOqonSZmdFQO0Uq0"
   },
   "headers": [
     {
@@ -39,10 +41,7 @@
       "permanent": true
     }
   ],
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/$1"
-    }
-  ]
+  "functions": {
+    "node_bundler": "esbuild"
+  }
 }

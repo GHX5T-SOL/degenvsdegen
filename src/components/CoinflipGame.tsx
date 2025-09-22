@@ -141,12 +141,13 @@ export function CoinflipGame() {
         maxSupportedTransactionVersion: 0
       })
 
-      if (txDetails) {
+      if (txDetails && txDetails.meta) {
         // Check if user received winnings (indicates win)
-        const userWon = txDetails.meta?.postTokenBalances?.some(
+        const userWon = txDetails.meta.postTokenBalances?.some(
           (balance) => balance.owner === wallet.publicKey?.toString() && 
           balance.uiTokenAmount?.uiAmount && balance.uiTokenAmount.uiAmount > 0
-        ) || txDetails.meta?.postBalances?.[0] > txDetails.meta?.preBalances?.[0]
+        ) || (txDetails.meta.postBalances?.[0] && txDetails.meta.preBalances?.[0] && 
+              txDetails.meta.postBalances[0] > txDetails.meta.preBalances[0])
 
         const finalSide = userWon ? 'heads' : 'tails'
         setCoinSide(finalSide)

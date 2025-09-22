@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && anchor build",
+    "build": "next build",
+    "build:anchor": "anchor build",
+    "build:all": "anchor build && next build",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "prettier */*.js \"*/**/*{.js,.ts}\" -w"
